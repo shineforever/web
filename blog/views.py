@@ -8,7 +8,7 @@ from django.db import connection
 from forms import CommentForm
 
 import os
-#import Common
+import Common
 import time
 import datetime
 
