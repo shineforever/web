@@ -1,0 +1,224 @@
+body { 
+		position: relative;
+		width: 1000px;
+		margin-left: 50%;
+		left: -500px;
+		font-size: 1em;
+		color: #ffffff;
+		font-family: "Trebuchet MS", Arial£¬"ËÎÌå";
+		background: #F6F5F5;
+}
+a { 
+		color: #2894FF;
+		text-decoration: none;
+}
+a:hover { 
+		color: #333333;
+}
+#header {
+		background: #424E4F;
+		height: 200px;
+}
+#logo { 
+		padding: 20px 0 0 50px;
+}
+#logo a{
+		color: #ffffff; 
+		text-decoration: none; 
+		font-weight: bold; 
+		font-size: 3em; 
+		text-transform: uppercase;
+}
+#intro{
+		color: #ffffff;
+		padding: 0 0 0 50px;
+		font-size: 1.3em;
+}
+		
+#nav {
+		background: #6C6C6C;
+		height: 50px;
+}
+#nav ul { 
+		margin: 0;
+		padding: 0;
+}
+#nav ul li{
+		display: inline-block; 
+		float: left; 
+		width: 104px; 
+		list-style: none; 
+		text-align: center;
+}
+#nav a {
+		display: block; 
+		float: left; 
+		width: 104px; 
+		color: #ffffff; 
+		font-size: 1.3em; 
+		text-transform:uppercase; 
+		font-weight:bold; 
+		text-decoration:none; 
+		padding-top:10px;
+}
+#nav a:hover{
+		color: #8A8989;
+}
+#search {
+		position: relative;
+		left: 750px;
+		top: -55px;
+}
+#searchblock {
+		height: 25px; 
+		border: none;
+}
+#searchbutton {
+		border: none;
+		background: #0099FF;
+		color: #fff;
+		height: 25px;
+		width: 80px;
+		font-size: 1.1em;
+		font-weight: bold;
+}
+#content{
+		background: #272727;
+}
+
+#main {
+		float: left;
+		width: 790px;	
+		background: #444444;
+}
+#sidebar {
+		float: right;
+		width: 180px;
+		background: #3C3C3C;
+		padding-top: 40px;
+		padding-left: 20px;
+}
+
+#footer {
+		background: #424E4F; 
+		height: 100px;
+}
+#footer p {
+		float: right;  
+		padding:30px 30px 0 0; 
+		color: #ffffff;  
+		font-size: 15px; 
+		text-align: right;
+}
+
+.articleshort{
+		border: 2px solid white;
+		margin: 20px;
+		padding: 15px;
+
+}
+.articleshort a{
+		font-size: 1.2em;
+
+}
+.articleshort span{
+		font-size: 0.8em;
+		padding-right: 10px;
+}
+
+.articlelist{
+
+}
+
+.articlelist ul li{
+		position: relative;
+		list-style: none;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		left: -20px;
+}
+
+.articlelist a{
+		font-size: 1.2em;
+}
+.articlelist table {
+		margin: 20px 10px 10px 10px;
+}
+.articlelist table td{
+		padding: 0 2px 0 2px;
+}
+
+.caption{
+		width: 460px;
+		font-weight: bold;
+}
+
+.pages{
+
+		text-align: center;
+		margin-bottom: 10px;
+		margin-top: 10px;
+}
+
+.article{
+		border: 2px solid white;
+		margin: 20px;
+		padding: 15px;
+}
+.article h3{
+		font-size: 1.4em;
+		font-weight: blod;
+}
+.article span{
+		font-size: 1em;
+}
+.article p{
+		font-size: 1.2em;
+}
+
+.hits span{ 
+		float: right;
+		margin-right: 20px;
+}
+#goodorbad{
+		float: right;
+		margin-right: 20px;
+}
+#good, #bad{
+		border: none;
+		background: #0099FF;
+		color: #fff;
+		font-size: 1.1em;
+		font-weight: bold;
+}
+
+#commentlist {
+		margin-top: 70px;
+		margin-left: 20px;
+}
+
+.onecomment{
+		margin: 10px 20px 10px 0;
+		padding: 15px;
+		border: 2px solid white;
+}
+.onecomment span{
+		font-weight: bold;
+}
+.commentform{
+		margin: 40px 20px 40px 20px;
+}
+.commentsubmit{
+		border: none;
+		background: #0099FF;
+		color: #fff;
+		font-size: 1.1em;
+		font-weight: bold;
+		margin-top: 20px;
+		margin-left: 160px;
+}
+.submiterror{
+		margin: 40px 20px 40px 20px;
+		color: red;
+		font-weight: bold;
+}

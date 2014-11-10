@@ -1,0 +1,48 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+{% extends "base.html" %}
+{% block main %}
+	<div class="article">
+		<h3>{{article.caption}}</h3>
+		<span>{{article.category.name}}</span>
+		<span>{{article.createtime|date:"Y-m-d H:i:s"}}<span>
+		<p>{{article.content|safe}}</p>
+	</div>
+
+	<div class="hits">	
+		<form id="goodorbad" action="" method="post">{% csrf_token %}
+			<input id="good" name='good' type="submit" value="顶 ({{article.goods}})">
+			<input id="bad" name='bad' type="submit" value="踩 ({{article.bads}})">
+		</form>
+		<span>您是本文的第<strong>{{article.hits}}</strong>个读者</span>
+	</div>
+	
+	<div id="commentlist">
+		<span>共有<strong>{{article.times}}</strong>条评论</span>
+		
+		{% if commentlist %}
+
+			{% for comment in commentlist %}
+			<div class="onecomment">
+				<span>{{comment.name}} 发表于 {{comment.createtime|date:"Y-m-d H:i:s"}}</span>
+				<p>{{comment.content|safe}}</p>
+				
+			</div>
+			{% endfor %}
+
+		{% endif %}
+	</div>
+
+	{% if submiterror %}
+		<div class="submiterror">
+		姓名和内容为必填字段
+		</div>
+	{% endif %}
+	<div class="commentform">
+		<form action="" method="post">{% csrf_token %}
+			<table>
+				{{ form.as_table }}
+			</table>   
+			<input class="commentsubmit" name="commentsubmit" type="submit" value='提交评论'>
+		</form>
+	</div>
+{% endblock %}

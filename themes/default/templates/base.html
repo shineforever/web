@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<title>我的博客</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="author" content="Zehua Chen" />
+<meta name="description" content="personal web page" />
+
+<link href="/themes/default/style.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body>
+	<!-- header -->
+    <div id="header">
+		<p id="logo"><a href="/blog/">随心FLY</a></p>
+        <p id="intro">Life is hard</p>
+		
+		<!-- navigation -->
+        <div id="nav">
+			<ul>
+				<li><a href="/blog/">首页</a></li>
+				<li><a href="/article-list/">博文目录</a></li>
+				<li><a href="#">图片</a></li>
+				<li><a href="#">关于我</a></li>
+            </ul>
+		</div>
+        <!-- end navigation -->		
+		
+		<form id="search" action="/article-list/" method="get">
+			<p>
+			<input id="searchblock" type="text" name="keywords">
+			<input id="searchbutton" type="submit" name="searchsubmit" value="搜  索">
+			</p>
+        </form>
+            
+    </div>
+    <!-- end header -->
+	
+	<!-- content -->
+	<div id="content">    
+		<!-- main -->
+		<div id="main">  
+			{% block main %}
+			{% endblock %}
+		</div>
+		<!-- end main -->
+		
+		<!-- sidebar -->
+		<div id="sidebar">
+			{%include 'r_sidebar.html'%}
+		</div>
+		<!-- end sidebar -->
+		
+		<div id="clear" style="clear:both"></div>
+	</div>
+	<!-- end content -->
+    
+	<!-- footer -->
+    <div id="footer">        
+        <p>本站由<a href="http://my.oschina.net/u/1585083">chenzehua</a>使用<a href="https://www.djangoproject.com/">django</a>搭建</p>        
+    </div>
+    <!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,67 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+{% extends "base.html" %}
+{% block main %}
+
+	{% if articles %}
+	<div class="articlelist">
+		<table>
+
+		{% for article in articlelist.object_list %}
+		<tr>
+			<td class="caption"><a href="/article/?article={{article.id}}">{{article.caption}}</a></td>
+			<td>阅读({{article.hits}})</td>
+			<td>评论({{article.times}})</td>
+			<td>顶({{article.goods}})</td>
+			<td>踩({{article.bads}})</td>
+			<td>{{article.createtime|date:"Y-m-d"}}</td>
+		</tr>
+		{% endfor %}		
+		</table>
+<!--		<ul>	  
+		{% for article in articlelist.object_list %}
+        <li>
+			<div id="caption"><a href="/article/?article={{article.id}}">{{article.caption}}</a></div>
+			<span>{{article.createtime|date:"Y-m-d"}}</span>
+			<span>踩({{article.bads}})</span> 
+			<span>顶({{article.goods}})</span>
+			<span>评论({{article.times}})</span>
+			<span>阅读({{article.hits}})</span>
+		</li>
+		{% endfor %}
+		</ul> -->
+	</div>
+	
+	<div class="pages">
+		{% if articlelist.has_previous %}
+			<a href="?page={{articlelist.previous_page_number}}" title="上一页">上一页</a>&nbsp;
+			<a href="?page=1" title="首 页">首 页</a>&nbsp;
+		{% else %}
+			上一页&nbsp;
+			首 页&nbsp;
+		{% endif %}
+		
+		{% for p in page_range %}
+			{% ifequal p articlelist.number %}
+				<span style="background:green;">{{p}}</span>
+			{% else %}
+				<a href="?page={{p}}" title="第{{p}}页">{{p}}</a>
+			{% endifequal %}
+		{% endfor %}
+		&nbsp;
+		{% if articlelist.has_next %}
+			<a href="?page={{articlelist.next_page_number}}" title="下一页">下一页</a>&nbsp;
+			<a href="?page={{articlelist.paginator.num_pages}}" title="末 页">末 页</a>&nbsp;
+		{% else %}
+			下一页&nbsp;
+			末 页&nbsp;
+		{% endif %}
+	</div>
+    
+	{% else %}
+	<div class="no-article">
+		<p>没有找到对应文章！</p>
+	</div>
+	{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<strong>博文分类：</strong>
+<ul style="list-style:square">
+{% for category in categorys %}
+    <li>
+    <a href="/article-list/?category={{ category.id }}">{{category.name}}</a>
+    ({{category.article_num}})
+    </li>
+{% endfor %}
+</ul>
+
+<br>
+
+<strong>友情链接：</strong>
+<ul style="list-style:square">
+    <li> <a href="http://www.qiushibaike.com"> 糗事百科 </a> </li>
+    <li> <a href="http://www.cc98.org"> CC98 </a> </li>
+    <li> <a href="http://www.nexushd.org"> NexusHD </a> </li>
+<ul>
+

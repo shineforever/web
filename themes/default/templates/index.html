@@ -1,0 +1,30 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+{% extends "base.html" %}
+
+{% block main %}
+
+{% if articles %}
+	
+	{% for article in articles %}
+	<div class="articleshort">
+		<a href="/article/?article={{article.id}}"><strong>{{article.caption}}</strong></a> <br>
+		<span>类别：{{article.category.name}} </span>
+		<span>时间：{{article.createtime|date:"Y-m-d H:i:s"}}</span>
+		<p>{{article.shortcontent}}</p>
+		
+		<div class="info">
+			<span>阅读({{article.hits}})</span>
+			<span>评论({{article.times}})</span>
+			<span>顶({{article.goods}})</span>
+			<span>踩({{article.bads}})</span>
+		</div>
+	</div>
+	{% endfor %}
+
+{% else %}
+	<div class="no-article">
+		<p>这人很懒，还没文章</p>
+	</div>
+{% endif %}
+
+{% endblock %}
