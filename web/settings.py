@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'DjangoUeditor',
+#    'DjangoUeditor',
     'blog',
 
 )
@@ -56,12 +56,11 @@ ROOT_URLCONF = 'web.urls'
 WSGI_APPLICATION = 'web.wsgi.application'
 
 
+
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    'D:\web\themes\default\templates',
+os.path.join(os.path.dirname(__file__), '../themes/default/templates').replace('\\','/'),
 )
+
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#database
 
@@ -70,9 +69,9 @@ DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'web',
-            'USER': 'web',
+            'USER': 'root',
             'PASSWORD': 'routon',
-            'HOST':'172.16.41.29',
+            'HOST':'127.0.0.1',
             'PORT':'3306',
     }
 }
@@ -96,7 +95,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = 'D:\web\media\images\upload'
+
+MEDIA_ROOT = (
+    os.path.join(os.path.dirname(__file__), '..\media\images\upload').replace('\\','/'),
+)
 
 
 

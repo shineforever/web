@@ -1,7 +1,7 @@
 #coding:utf-8
 from django.db import models
 from django.contrib import admin
-from DjangoUeditor.modeles import UEditorField
+from DjangoUeditor.models import UEditorField
 import time
 
 
